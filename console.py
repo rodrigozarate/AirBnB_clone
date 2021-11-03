@@ -4,14 +4,18 @@
 
 class HBNBCommand(cmd.Cmd):
     """ Class Holberton AirBnB clone """
-    cmdloop():
+    prompt = '(hbnb) '
+
+    def cmdloop():
         """ do the prompt """
 
-    quit():
+    def quit():
         """ Exit implementation """
+        return True
 
-    EOF():
+    def EOF():
         """ Not sure if this should be this way """
+        return True
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
