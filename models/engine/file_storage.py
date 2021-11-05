@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 """ Model storage serialize and deserialization """
+import json
+from models.base_model import BaseModel
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.user import User
 
 
 class FileStorage:
@@ -14,6 +22,9 @@ class FileStorage:
 
     def new(self, obj):
         """ set objects with keys """
+        names = obj.to_dict()
+        keys = "{}.{}".format(names["__class__"], names["id"])
+        self.__objects[keys] = obj
 
     def save(self):
         """ serializes to JSON """
