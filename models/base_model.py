@@ -52,4 +52,3 @@ class BaseModel:
         dictionary['created_at'] = self.created_at.strftime(
                                    "%Y-%m-%dT%H:%M:%S.%f")
         return dictionary
-
