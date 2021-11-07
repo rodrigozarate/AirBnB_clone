@@ -6,7 +6,7 @@ import re
 import random
 from console import HBNBCommand
 from models import *
-
+from unittest.mock import patch
 
 
 class TestConsole(unittest.Testcase):
