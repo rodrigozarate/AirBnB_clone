@@ -30,7 +30,7 @@ class FileStorage:
         """ serializes to JSON """
         json_obj = {}
         for key in self.__objects:
-            json_obj[key] = self._objects[key].to_dict()
+            json_obj[key] = self.__objects[key].to_dict()
         with open(self.__file_path, 'w') as file:
             json.dump(json_obj, file, indent=2)
 
