@@ -8,11 +8,11 @@ class HBNBCommand(cmd.Cmd):
     """ Clas to define basic commands of console """
     prompt = '(hbnb) '
 
-    def quit(self, arg):
+    def do_quit(self, arg):
         """ do quit """
         return True
 
-    def EOF(self, arg):
+    def do_EOF(self, arg):
         """ Detect End Of File """
         return True
 
@@ -35,19 +35,6 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
                 return False
 
-    def check_for_id(self, args):
-        """ Evaluate arguments and instance id """
-        if len(args) < 2:
-            print("** instance id missing **")
-            return False
-
-        key = args[0] + "." + args[1]
-        if key in storage.all():
-            return True
-        else:
-            print("** no instance found **")
-            return False
-
     def check_for_attribute(self, args):
         """ Check existance of attributes """
         if len(args) < 3:
@@ -61,7 +48,20 @@ class HBNBCommand(cmd.Cmd):
         else:
             return True
 
-    def create(self, args):
+    def check_for_id(self, args):
+        """ Evaluate arguments and instance id """
+        if len(args) < 2:
+            print("** instance id missing **")
+            return False
+
+        key = args[0] + "." + args[1]
+        if key in storage.all():
+            return True
+        else:
+            print("** no instance found **")
+            return False
+
+    def do_create(self, args):
         """ Create new instance """
         className = args.split()
         if self.check_for_class(className):
@@ -69,14 +69,14 @@ class HBNBCommand(cmd.Cmd):
             new_instance.save()
             print(new_instance.id)
 
-    def show(self, arg):
+    def do_show(self, arg):
         """ Show arguments of instance """
         class_id = arg.split()
         if self.check_for_class(class_id) and self.check_for_id(class_id):
             dict = storage.all()
             print("{}".format(dict[class_id[0] + "." + class_id[1]]))
 
-    def destroy(self, args):
+    def do_destroy(self, args):
         """ Destroy the instance """
         class_id = args.split()
         if self.check_for_class(class_id) and self.check_for_id(class_id):
@@ -84,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
             del dict[class_id[0] + "." + class_id[1]]
             storage.save()
 
-    def all(self, args):
+    def do_all(self, args):
         """ Print all clases of instance """
         newlist = []
         args_sp = args.split()
@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(newlist)
 
-    def update(self, args):
+    def do_update(self, args):
         """ Update current instance """
         args_sp = args.split()
         if (self.check_for_class(args_sp) and self.check_for_id(args_sp) and
