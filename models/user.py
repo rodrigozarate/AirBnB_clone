@@ -2,6 +2,7 @@
 """ MODULE user for AirBnB clone console """
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
     """ User class """
     first_name = ""

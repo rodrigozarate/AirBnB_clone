@@ -2,6 +2,7 @@
 """ MODULE review for AirBnB clone console """
 from models.base_model import BaseModel
 
+
 class Review(BaseModel):
     """ Review class """
     place_id = ""
