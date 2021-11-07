@@ -2,6 +2,7 @@
 """ MODULE place for AirBnB clone console """
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     """ Place class """
     city_id = ""

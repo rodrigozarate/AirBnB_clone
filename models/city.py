@@ -2,6 +2,7 @@
 """ MODULE city for AirBnB clone console """
 from models.base_model import BaseModel
 
+
 class City(BaseModel):
     """ Amenity class """
     state_id = ""
