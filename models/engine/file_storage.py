@@ -36,3 +36,17 @@ class FileStorage:
 
     def reload(self):
         """ deserialize JSON to object """
+        try:
+            with open(FileStorage.__file_path, mode="r") as file:
+                content = file.read()
+                dict_from_file = {}
+                if content != "":
+                    dict_from_file = json.loads(content)
+
+                for file_key, dict_obj in dict_from_file.items():
+                    if file_key not in FileStorage.__objects.keys():
+                        classFrmt = dict_obj["__class__"]
+                        newInstance = eval("{}(**dict_obj)".format(classFrmt))
+                        self.new(newInstance)
+        except FileNotFoundError:
+            pass
