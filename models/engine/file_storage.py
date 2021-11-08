@@ -40,6 +40,7 @@ class FileStorage:
                 content = json.load(file)
                 for file_key in content.values():
                     class_name = file_key["__class__"]
-                        self.new(eval(class_name)(**file_key))
+                    del file_key["__class__"]
+                    self.new(eval(class_name)(**file_key))
         except FileNotFoundError:
             return
