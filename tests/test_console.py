@@ -16,7 +16,7 @@ class TestConsole(unittest.TestCase):
         expected = """
 Documented commands (type help <topic>):
 ========================================
-help
+EOF  all  create  destroy  help  quit  show  update
 \n"""
         with patch('sys.stdout', new=StringIO()) as str:
             HBNBCommand().onecmd("help")
