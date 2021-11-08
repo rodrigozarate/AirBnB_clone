@@ -2,6 +2,8 @@
 """ Console HBNB Clone """
 import cmd
 from models import *
+
+
 class HBNBCommand(cmd.Cmd):
     """ Clas to define basic commands of console """
     prompt = '(hbnb) '
@@ -14,7 +16,6 @@ class HBNBCommand(cmd.Cmd):
         """ Detect End Of File """
         return True
 
-  
     def emptyline(self):
         """ do nothing """
         pass
@@ -86,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         """ Print all clases of instance """
         newlist = []
-        args_sp = args.split() 
+        args_sp = args.split()
         for key, value in storage.all().items():
             className = key.split(".")
             if len(args) == 0:
@@ -116,4 +117,4 @@ class HBNBCommand(cmd.Cmd):
             upd_instance.save()
 
 if __name__ == '__main__':
-HBNBCommand().cmdloop()
+    HBNBCommand().cmdloop()
