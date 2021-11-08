@@ -13,7 +13,7 @@ from models.user import User
 class FileStorage:
     """ save the data to file """
 
-    __file_path = "data.json"
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
