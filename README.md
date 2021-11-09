@@ -12,7 +12,7 @@ Create objects and translate it to JSON strings that can be stored, readed, and 
 Download repo and extract or clone
 
 Entry point
- Type '''./console.py'''
+ Type `./console.py`
 
 ### How to use it
 Send objects to the package either by interactive or non interactive mode
@@ -21,18 +21,21 @@ The order of parameters is important
 Command - Class - ID - Name - Value
 
 First create BaseModel
- (hbnb) '''create BaseModel'''
+ (hbnb) `create BaseModel`
 
 You'll get an ID number
 This number identify your object inside the file
 
 #### 1. Interactive mode
 (hbnb) help
+
 (hbnb) show BaseModel 1234-1234-1234
+
 (hbnb) update BaseModel 1234-1234-1234 email "example@mail.com"
+
 (hbnb) destroy BaseModel 1234-1234-1234
-(hbnb) quit
+
+(hbnb) quit:
 #### 2. Non interactive mode
 echo "help" | ./console.py
-
 
