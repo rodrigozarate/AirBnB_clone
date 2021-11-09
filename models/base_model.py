@@ -31,8 +31,8 @@ class BaseModel:
 
     def __str__(self):
         """ Instance print """
-        return "[{}] ({}) {}".format(type(self).__name__, self.id,
-                                         self.__dict__)
+        return "[{}] ({}) {}".format(type(self).__name__,
+                                     self.id, self.__dict__)
 
     def save(self):
         """ Save changes """
