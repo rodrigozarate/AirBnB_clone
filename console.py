@@ -121,7 +121,7 @@ class HBNBCommand(cmd.Cmd):
                 upd_attr = getattr(upd_instance, attribute)
             except:
                 upd_attr = ""
-            type_attr = (upd_attr)
+            type_attr = type(upd_attr)
             setattr(upd_instance, attribute, type_attr(args_sp[3]))
             upd_instance.save()
 
