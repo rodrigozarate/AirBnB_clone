@@ -4,6 +4,7 @@
 	width: 100%;
 	border: 1px solid #DDDDDD;
 	border-radius: 4px;
+	position: relative;
 }
 .filters button{
 	font-size: 18px;
@@ -13,8 +14,8 @@
 	width: 20%;
 	border-radius: 4px;
 	border: none;
-	margin-top: auto;
-	margin-bottom: auto;
+	top: 10px;
+	bottom: 10px;
 	position: absolute;
 	right: 30px;
 }
