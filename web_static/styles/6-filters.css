@@ -73,6 +73,15 @@
 }
 .popover ul{
     list-style: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.popover li{
+    padding-left: 20px;
+    padding-top: 6px;
+}
+.popover h2{
+    font-style: 16px;
 }
 .locations:hover > .popover{
     visibility: visible;
